@@ -3,7 +3,7 @@
     class="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 overflow-hidden"
   >
     <div
-      class="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r z-40"
+      class="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r dark:border-zinc-900 z-40"
     >
       <div class="absolute inset-0 h-full w-full z-30">
         <div

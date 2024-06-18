@@ -4,8 +4,8 @@ export default defineNuxtConfig({
   ssr: false,
   modules: [
     '@nuxtjs/supabase',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxt/ui'
   ],
   supabase: {
     url: process.env.SUPABASE_URL,
