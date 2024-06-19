@@ -9,12 +9,7 @@
           <StructureLogo />
           <UtilitiesColorModeButton />
         </div>
-        <div class="relative flex flex-col flex-1 overflow-hidden my-4">
-          <div class="lg:mt-0 px-2" v-for="menu of menus">
-            <UVerticalNavigation :links="menu" />
-            <hr class="mx-4 my-4 border-t dark:border-gray-700" />
-          </div>
-        </div>
+        <StructureMenu :menus="menus" />
       </div>
     </div>
   </div>
@@ -29,34 +24,24 @@ export default {
           {
             label: "Dashboard",
             icon: "i-heroicons-home",
-            to: "/",
+            to: "/user/dashboard",
           },
           {
             label: "Actions",
-            icon: "i-heroicons-cog",
-            to: "/actions",
-          },
-          {
-            label: "Settings",
-            icon: "i-heroicons-cog",
-            to: "/settings",
-          },
-          {
-            label: "Profile",
-            icon: "i-heroicons-user",
-            to: "/profile",
+            icon: "i-heroicons-queue-list",
+            to: "/user/actions",
           },
         ],
         [
           {
             label: "Settings",
             icon: "i-heroicons-cog",
-            to: "/settings",
+            to: "/user/settings",
           },
           {
             label: "Profile",
             icon: "i-heroicons-user",
-            to: "/profile",
+            to: "/user/profile",
           },
         ]
       ],

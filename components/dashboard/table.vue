@@ -184,7 +184,7 @@ export default {
           id: this.people.length + 1,
           name: this.getRandomName(),
           title: this.getRandomTitle(),
-          email: getRandomEmail(),
+          email: this.getRandomEmail(),
           role: "Member",
         };
 

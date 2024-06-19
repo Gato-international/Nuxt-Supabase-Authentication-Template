@@ -2,7 +2,7 @@
   <div class="grid h-full w-full gap-4">
     <div class="flex flex-row items-center justify-between">
       <div>
-        <span class="text-white text-xl font-bold">Your Profile</span>
+        <span class="text-white text-xl font-bold">Your Settings</span>
       </div>
     </div>
     <div class="flex flex-row space-x-4">
@@ -10,7 +10,7 @@
         <StructureMenu :menus="menus" />
       </div>
       <div class="w-full gap-4 border border-gray-800 rounded-md p-4">
-
+        <NuxtPage />
       </div>
     </div>
   </div>
@@ -26,6 +26,11 @@ export default {
     return {
       menus: [
         [
+          {
+            label: "General",
+            icon: "i-heroicons-cog",
+            to: "/user/settings/",
+          },
           {
             label: "Notifications",
             icon: "i-heroicons-bell-alert",

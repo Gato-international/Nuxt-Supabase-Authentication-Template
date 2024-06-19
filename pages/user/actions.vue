@@ -1,0 +1,21 @@
+<template>
+  <div class="grid h-full w-full gap-4">
+    <div class="flex flex-row items-center justify-between">
+      <div>
+        <span class="text-white text-xl font-bold">Your Actions</span>
+      </div>
+    </div>
+    <div
+      class="flex flex-col h-autogap-4 border border-gray-800 rounded-md p-4 overflow-hidden"
+    >
+      <div class="h-full">
+        <DashboardTable />
+      </div>
+    </div>
+  </div>
+</template>
+<script setup>
+definePageMeta({
+  layout: "user",
+});
+</script>

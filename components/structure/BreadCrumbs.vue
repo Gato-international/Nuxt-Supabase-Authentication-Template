@@ -14,7 +14,7 @@ export default {
       return crumbs.map((crumb, index) => {
         return {
           label: crumb,
-          to: crumbs.slice(0, index + 1).join("/"),
+          to: '/' + crumbs.slice(0, index + 1).join("/"),
           icon: "ri:dashboard-fill",
         };
       });
