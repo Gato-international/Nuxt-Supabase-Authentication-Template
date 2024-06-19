@@ -28,17 +28,14 @@ export default {
         [
           {
             label: "General",
-            icon: "i-heroicons-cog",
             to: "/user/settings/",
           },
           {
             label: "Notifications",
-            icon: "i-heroicons-bell-alert",
             to: "/user/settings/notifications",
           },
           {
             label: "Webhooks",
-            icon: "i-heroicons-cloud",
             to: "/user/settings/webhooks",
           },
         ],

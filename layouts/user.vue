@@ -1,4 +1,6 @@
 <template>
+  <StructureAccentsLoadingbar />
+  <StructureAccentsGradient />
   <div
     class="bg-gradient-to-b dark:from-gray-900 dark:to-primary-400/0 from-gray-200 h-full xl:p-12 duration-150 transition-all"
   >
