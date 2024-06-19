@@ -1,9 +1,11 @@
 <template>
-  <UBreadcrumb :links="crumbs">
-    <template #icon="{ link, index, isActive }">
-      <icon :name="link.icon" class="w-4 h-4" />
-    </template>
-  </UBreadcrumb>
+  <div class="capitalize">
+    <UBreadcrumb :links="crumbs">
+      <template #icon="{ link, index, isActive }">
+        <icon :name="link.icon" class="w-4 h-4" />
+      </template>
+    </UBreadcrumb>
+  </div>
 </template>
 <script>
 export default {
@@ -20,9 +22,10 @@ export default {
   },
   computed: {
     crumbs() {
-      const route = this.$route;
-      let crumbs = route.path.split("/").filter((crumb) => crumb !== "");
-
+      let crumbs = this.$route.path
+        .split("/")
+        .filter((crumb) => crumb !== "");
+      crumbs.splice(-1, 1)
       if (crumbs.length === 0) {
         return [];
       }
