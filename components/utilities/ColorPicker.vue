@@ -64,9 +64,11 @@ export default {
   methods: {
     setColor(color) {
       this.appConfig.ui.primary = color;
+      window.localStorage.setItem('nuxt-ui-primary', this.appConfig.ui.primary)
     },
     setSecondaryColor(color) {
       this.appConfig.ui.gray = color;
+      window.localStorage.setItem('nuxt-ui-gray', this.appConfig.ui.gray)
     },
   },
   computed: {

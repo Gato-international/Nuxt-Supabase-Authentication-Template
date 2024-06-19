@@ -43,6 +43,11 @@ export default {
             icon: "i-heroicons-user",
             to: "/user/profile",
           },
+          {
+            label: "Theme Options",
+            icon: "i-heroicons-swatch",
+            to: "/user/profile/appearance",
+          }
         ]
       ],
     };
