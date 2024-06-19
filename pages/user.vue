@@ -6,6 +6,7 @@ definePageMeta({
   layout: "user",
 });
 defineNuxtRouteMiddleware((to, from) => {
+  console.log("to", to);  
   if (to.path === "/user") {
     return navigateTo("/user/dashboard");
   }

@@ -6,7 +6,7 @@
       </div>
     </div>
     <div
-      class="flex flex-col h-autogap-4 border border-gray-800 rounded-md p-4 overflow-hidden"
+      class="flex flex-col h-autogap-4 border dark:dark:border-gray-800 border-gray-200 border-gray-200 rounded-md p-4 overflow-hidden"
     >
       <div class="h-full">
         <DashboardTable />

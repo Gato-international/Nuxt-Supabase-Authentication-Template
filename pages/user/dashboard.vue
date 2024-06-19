@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="grid grid-cols-3 gap-4">
-      <div class="grid grid-cols-2 gap-4 border border-gray-800 rounded-md p-4">
+      <div class="grid grid-cols-2 gap-4 border dark:dark:border-gray-800 border-gray-200 border-gray-200 rounded-md p-4">
         <DashboardMetric
           v-for="i in 4"
           :ui="{
@@ -32,7 +32,7 @@
           }"
         />
       </div>
-      <div class="grid grid-cols-2 gap-4 border border-gray-800 rounded-md p-4">
+      <div class="grid grid-cols-2 gap-4 border dark:dark:border-gray-800 border-gray-200 border-gray-200  rounded-md p-4">
         <DashboardMetric
           v-for="i in 4"
           :ui="{
@@ -43,7 +43,7 @@
         />
       </div>
       <div
-        class="flex flex-col h-autogap-4 border border-gray-800 rounded-md p-4 overflow-hidden"
+        class="flex flex-col h-autogap-4 border dark:dark:border-gray-800 border-gray-200 border-gray-200 rounded-md p-4 overflow-hidden"
       >
         <div class="overflow-hidden space-y-4">
           <UAlert
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div
-      class="flex flex-col h-autogap-4 border border-gray-800 rounded-md p-4 overflow-hidden"
+      class="flex flex-col h-autogap-4 border dark:dark:border-gray-800 border-gray-200 border-gray-200 rounded-md p-4 overflow-hidden"
     >
       <div class="h-full">
         <DashboardTable />

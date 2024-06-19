@@ -4,7 +4,7 @@
     <div class="space-y-4 mt-4">
       <div
         v-for="option in options"
-        class="flex flex-row items-center border border-gray-800 rounded-md p-4"
+        class="flex flex-row items-center border dark:border-gray-800 border-gray-200 rounded-md p-4"
       >
         <UToggle
           color="primary"
@@ -17,7 +17,7 @@
     </div>
     <div class="space-y-4 mt-4">
       <div
-        class="flex flex-row items-center border border-gray-800 rounded-md p-4"
+        class="flex flex-row items-center border dark:border-gray-800 border-gray-200 rounded-md p-4"
         v-for="webhook in webhooks"
       >
         <UInput

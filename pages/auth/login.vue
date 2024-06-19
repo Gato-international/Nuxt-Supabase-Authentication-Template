@@ -10,7 +10,7 @@
     </div>
     <div class="grid gap-6">
       <form>
-        <div class="grid gap-2">
+        <div class="grid gap-4">
           <div class="grid gap-1">
             <label
               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"

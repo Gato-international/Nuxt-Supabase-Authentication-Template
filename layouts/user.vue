@@ -1,9 +1,9 @@
 <template>
   <div
-    class="bg-gradient-to-b from-gray-900 to-primary-400/0 h-full xl:p-12 duration-150 transition-all"
+    class="bg-gradient-to-b dark:from-gray-900 dark:to-primary-400/0 from-gray-200 h-full xl:p-12 duration-150 transition-all"
   >
     <div
-      class="fixed inset-0 flex lg:overflow-hidden antialiased font-sans text-gray-700 dark:text-gray-200 select-none bg-gray-950 xl:mt-12 xl:mx-4 rounded-t-lg"
+      class="fixed inset-0 flex lg:overflow-hidden antialiased font-sans text-gray-700 dark:text-gray-200 select-none dark:bg-gray-950 bg-white xl:mt-12 xl:mx-4 rounded-t-lg shadow-xl"
     >
       <StructureSidebar />
       <div class="flex flex-col w-full overflow-y-scroll">

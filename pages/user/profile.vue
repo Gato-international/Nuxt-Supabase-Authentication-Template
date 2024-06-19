@@ -6,11 +6,11 @@
       </div>
     </div>
     <div class="flex flex-row space-x-4">
-      <div class="w-[280px] gap-4 border border-gray-800 rounded-md p-4">
+      <div class="w-[280px] gap-4 border dark:border-gray-800 border-gray-200 rounded-md p-4">
         <StructureMenu :menus="menus" />
       </div>
-      <div class="w-full gap-4 border border-gray-800 rounded-md p-4">
-
+      <div class="w-full gap-4 border dark:border-gray-800 border-gray-200 rounded-md p-4">
+        <NuxtPage />
       </div>
     </div>
   </div>
@@ -27,14 +27,24 @@ export default {
       menus: [
         [
           {
-            label: "Notifications",
-            icon: "i-heroicons-bell-alert",
-            to: "/user/settings/notifications",
+            label: "Profile",
+            to: "/user/profile",
           },
           {
-            label: "Webhooks",
-            icon: "i-heroicons-cloud",
-            to: "/user/settings/webhooks",
+            label: "Account",
+            to: "/user/profile/account",
+          },
+          {
+            label: "Appearance",
+            to: "/user/profile/appearance",
+          },
+          {
+            label: "Notifications",
+            to: "/user/profile/notifications",
+          },
+          {
+            label: "Display",
+            to: "/user/profile/display",
           },
         ],
       ],

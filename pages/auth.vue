@@ -21,7 +21,7 @@
       <div
         class="absolute h-full w-full inset-0 z-20 bg-zinc-900 overflow-hidden"
       >
-        <HomeScreenNoise />
+        <HomeScreenNoise class="opacity-90" />
         <HomeScreenGradient />
       </div>
       <StructureLogo />
