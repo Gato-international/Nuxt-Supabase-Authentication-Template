@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full relative">
+  <div class="w-screen h-screen relative">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
@@ -41,7 +41,7 @@
         >
           <feTurbulence
             type="fractalNoise"
-            baseFrequency=".001"
+            baseFrequency=".00001"
             numOctaves="3"
             seed="1"
             stitchTiles="stitch"
@@ -77,7 +77,7 @@
     </svg>
     <svg
       class="absolute top-0 left-0 w-full h-full noise-overlay"
-      viewBox="0 0 250 250"
+      viewBox="0 0 100% 0"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
@@ -103,7 +103,7 @@
         height="100%"
         filter="url(#noiseFilter)"
         fill="#000000"
-        opacity="0.2"
+        opacity="0.6"
       />
     </svg>
   </div>
