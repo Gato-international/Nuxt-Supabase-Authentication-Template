@@ -2,7 +2,7 @@
   <div class="grid h-full w-full gap-4">
     <div class="flex flex-row items-center justify-between">
       <div>
-        <span class="text-white text-xl font-bold">Your Actions</span>
+        <span class="dark:text-white text-gray-700 text-xl font-bold">Your Actions</span>
       </div>
     </div>
     <div
