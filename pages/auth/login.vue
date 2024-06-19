@@ -11,22 +11,47 @@
     <div class="grid gap-6">
       <form>
         <div class="grid gap-4">
-          <div class="grid gap-1">
-            <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
-              for="email"
-              >Email</label
-            >
-            <UInput
-              v-model="value"
-              placeholder="name@example.com"
-              type="email"
-              autocapitalize="none"
-              autocomplete="email"
-              autocorrect="off"
-            />
+          <div class="space-y-2">
+            <div>
+              <label
+                class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="email"
+                >Password</label
+              >
+              <UInput
+                v-model="form.email"
+                color="emerald"
+                placeholder="Password"
+                type="email"
+                autocapitalize="none"
+                autocomplete="email"
+                autocorrect="off"
+              />
+            </div>
+            <div>
+              <label
+                class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="email"
+                >Confirm Password</label
+              >
+              <UInput
+                v-model="form.password"
+                color="emerald"
+                placeholder="Confirm Password"
+                type="password"
+                autocapitalize="none"
+                autocomplete="email"
+                autocorrect="off"
+              />
+            </div>
           </div>
-          <UButton block>Sign In with Email</UButton>
+          <UButton
+            :disabled="loginValid"
+            color="emerald"
+            @click="signInWithEmailPassword()"
+            block
+            >Sign In with Email</UButton
+          >
         </div>
       </form>
       <div class="relative">
@@ -55,6 +80,11 @@
     </p>
   </div>
 </template>
+<script setup>
+definePageMeta({
+  auth: false,
+});
+</script>
 <script>
 export default {
   data() {
@@ -63,8 +93,8 @@ export default {
       providers: {},
       loginMethod: "",
       form: {
-        email: "ryantaber17@gmail.com",
-        password: "admin",
+        email: "",
+        password: "",
       },
       providers: [
         {
@@ -102,20 +132,47 @@ export default {
     };
   },
   methods: {
-    async basicLogin() {
+    async signInWithEmailPassword() {
+      console.log("login");
+      this.loading = true;
       const supabase = useSupabaseClient();
-      try {
-        this.loading = true;
-        const { error } = await supabase.auth.signInWithPassword({
-          email: this.form.email,
-          password: this.form.password,
-        });
-        if (error) throw error;
-        this.$router.push("/");
-      } catch (error) {
-        alert(error.error_description || error.message);
-      } finally {
+
+      const { data: response, error } = await supabase.auth.signInWithPassword({
+        email: this.form.email,
+        password: this.form.password,
+      });
+
+      if (error) {
+        console.log(error);
         this.loading = false;
+        return;
+      }
+
+      if (response) {
+        const { user, session } = response;
+        if (user && session) {
+          this.$router.push("/");
+        }
+      }
+
+      // try {
+      //   this.loading = true;
+      //   await this.$store.dispatch("user/loginUser", this.login);
+      //   this.loading = false;
+      // } catch (err) {
+      //   this.loading = false;
+      // }
+    },
+    async signInWithOTP() {
+      const { data, error } = await useSupabaseClient().auth.signInWithOtp({
+        email: "example@email.com",
+        options: {
+          emailRedirectTo: "http://localhost:3000/user/dashboard",
+        },
+      });
+
+      if (error) {
+        console.log(error);
       }
     },
   },

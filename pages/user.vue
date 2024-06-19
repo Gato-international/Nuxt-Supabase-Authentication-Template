@@ -4,6 +4,7 @@
 <script setup>
 definePageMeta({
   layout: "user",
+  auth: true,
 });
 defineNuxtRouteMiddleware((to, from) => {
   console.log("to", to);  

@@ -7,16 +7,27 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/ui'
   ],
+  runtimeConfig: {
+    public: {
+      middlewareOptions: {
+        loginRoute: '/auth/login',
+        registerRoute: '/auth/register',
+        authenticatedBasePath: '/user/dashboard',
+      }
+    }
+  },
   supabase: {
     url: process.env.SUPABASE_URL,
     key: process.env.SUPABASE_KEY,
-    redirect: false,
     clientOptions: {
       auth: {
+        flowType: 'pkce',
+        detectSessionInUrl: true,
         persistSession: true,
-        autoRefreshToken: true,
+        autoRefreshToken: true
       },
     },
+    redirect: false,
   },
   router: {
     linkExactActiveClass: ''

@@ -11,14 +11,14 @@
     <div class="grid gap-6">
       <form>
         <div class="grid gap-4">
-          <div class="grid gap-1">
+          <div>
             <label
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+              class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               for="email"
               >Email</label
             >
             <UInput
-              v-model="value"
+              v-model="email"
               placeholder="name@example.com"
               type="email"
               autocapitalize="none"
@@ -26,7 +26,45 @@
               autocorrect="off"
             />
           </div>
-          <UButton block>Sign In with Email</UButton>
+          <div class="space-y-2">
+            <div>
+              <label
+                class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="email"
+                >Password</label
+              >
+              <UInput
+                v-model="password.value"
+                placeholder="Password"
+                type="password"
+                autocapitalize="none"
+                autocomplete="email"
+                autocorrect="off"
+              />
+            </div>
+            <div v-if="passwordValid">
+              <label
+                class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="email"
+                >Confirm Password</label
+              >
+              <UInput
+                v-model="password.confirm"
+                placeholder="Confirm Password"
+                type="password"
+                autocapitalize="none"
+                autocomplete="email"
+                autocorrect="off"
+              />
+            </div>
+          </div>
+          <UButton
+            @click="register()"
+            color="emerald"
+            :disabled="!registerValid"
+            block
+            >Sign Up With Email</UButton
+          >
         </div>
       </form>
       <div class="relative">
@@ -36,3 +74,58 @@
     </div>
   </div>
 </template>
+<script setup>
+definePageMeta({
+  auth: false,
+});
+</script>
+<script>
+export default {
+  data() {
+    return {
+      email: "",
+      password: {
+        value: "",
+        confirm: "",
+      },
+    };
+  },
+  methods: {
+    async register() {
+      const { error } = await useSupabaseClient().auth.signUp({
+        email: this.email,
+        password: this.password.value,
+      });
+      if (error) {
+        console.log(error);
+      }
+    },
+  },
+  computed: {
+    emailValid() {
+      return this.email.length > 0;
+    },
+
+    passwordConfirmValid() {
+      return this.password.value === this.password.confirm;
+    },
+
+    passwordMatch() {
+      return this.password.value === this.password.confirm;
+    },
+
+    passwordValid() {
+      return this.password.value.length > 6;
+    },
+
+    registerValid() {
+      return (
+        this.emailValid &&
+        this.passwordValid &&
+        this.passwordConfirmValid &&
+        this.passwordMatch
+      );
+    },
+  },
+};
+</script>

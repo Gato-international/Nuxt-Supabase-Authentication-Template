@@ -9,8 +9,11 @@
     >
       <StructureSidebar />
       <div class="flex flex-col w-full overflow-y-scroll">
-        <div class="mt-10 mx-10 static top-0">
+        <div class="flex flex-row justify-between mt-10 mx-10 static top-0">
           <StructureBreadCrumbs />
+          <div>
+            <AuthAvatar />
+          </div>
         </div>
         <div class="m-10">
           <slot />

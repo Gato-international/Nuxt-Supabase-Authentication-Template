@@ -11,6 +11,16 @@
         </div>
         <StructureMenu :menus="menus" />
       </div>
+      <div class="mx-4 mb-2">
+        <UButton
+          block
+          color="black"
+          size="sm"
+          icon="i-heroicons-arrow-left-end-on-rectangle"
+          label="Logout"
+          @click="logout"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -52,8 +62,8 @@ export default {
             icon: "i-heroicons-swatch",
             to: "/user/profile/appearance",
             exact: true,
-          }
-        ]
+          },
+        ],
       ],
     };
   },
