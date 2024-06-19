@@ -18,6 +18,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  router: {
+    linkExactActiveClass: ''
+  },
   css: [
     '~/assets/css/fontface.css'
   ],

@@ -25,11 +25,13 @@ export default {
             label: "Dashboard",
             icon: "i-heroicons-home",
             to: "/user/dashboard",
+            exact: true,
           },
           {
             label: "Actions",
             icon: "i-heroicons-queue-list",
             to: "/user/actions",
+            exact: true,
           },
         ],
         [
@@ -37,16 +39,19 @@ export default {
             label: "Settings",
             icon: "i-heroicons-cog",
             to: "/user/settings",
+            exact: true,
           },
           {
             label: "Profile",
             icon: "i-heroicons-user",
             to: "/user/profile",
+            exact: true,
           },
           {
             label: "Theme Options",
             icon: "i-heroicons-swatch",
             to: "/user/profile/appearance",
+            exact: true,
           }
         ]
       ],

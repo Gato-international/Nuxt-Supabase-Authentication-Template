@@ -29,22 +29,27 @@ export default {
           {
             label: "Profile",
             to: "/user/profile",
+            exact: true,
           },
           {
             label: "Account",
             to: "/user/profile/account",
+            exact: true,
           },
           {
             label: "Appearance",
             to: "/user/profile/appearance",
+            exact: true,
           },
           {
             label: "Notifications",
             to: "/user/profile/notifications",
+            exact: true,
           },
           {
             label: "Display",
             to: "/user/profile/display",
+            exact: true,
           },
         ],
       ],

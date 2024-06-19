@@ -29,14 +29,17 @@ export default {
           {
             label: "General",
             to: "/user/settings/",
+            exact: true,
           },
           {
             label: "Notifications",
             to: "/user/settings/notifications",
+            exact: true,
           },
           {
             label: "Webhooks",
             to: "/user/settings/webhooks",
+            exact: true,
           },
         ],
       ],
