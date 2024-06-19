@@ -1,23 +1,28 @@
 <template>
-  <StructureAccentsLoadingbar />
-  <StructureAccentsGradient />
-  <div
-    class="bg-gradient-to-b dark:from-gray-900 dark:to-primary-400/0 from-gray-200 h-full xl:p-12 duration-150 transition-all"
-  >
+  <div class="flex flex-col">
+    <StructurePromo />
+    <div class="relative">
+      <StructureAccentsLoadingbar />
+      <StructureAccentsGradient />
+    </div>
     <div
-      class="fixed inset-0 flex lg:overflow-hidden antialiased font-sans text-gray-700 dark:text-gray-200 select-none dark:bg-gray-950 bg-white xl:mt-12 xl:mx-4 rounded-t-lg shadow-xl"
+      class="bg-gradient-to-b dark:from-gray-900 dark:to-primary-400/0 from-gray-200 h-full xl:p-12 duration-150 transition-all"
     >
-      <StructureSidebar />
-      <div class="flex flex-col w-full overflow-y-scroll">
-        <div class="flex flex-row justify-between mt-10 mx-10 static top-0">
-          <StructureBreadCrumbs />
-          <div>
-            <AuthAvatar />
+      <div
+        class="fixed inset-0 flex lg:overflow-hidden antialiased font-sans text-gray-700 dark:text-gray-200 select-none dark:bg-gray-950 bg-white xl:mt-20 xl:mx-4 rounded-t-lg shadow-xl"
+      >
+        <StructureSidebar />
+        <div class="flex flex-col w-full overflow-y-scroll">
+          <div class="flex flex-row justify-between mt-10 mx-10 static top-0">
+            <StructureBreadCrumbs />
+            <div>
+              <AuthAvatar />
+            </div>
+          </div>
+          <div class="m-10">
+            <slot />
           </div>
         </div>
-        <div class="m-10">
-          <slot />
-        </div>       
       </div>
     </div>
   </div>
@@ -50,6 +55,4 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; /* Slightly lighter color when hovered */
 }
-
 </style>
-
