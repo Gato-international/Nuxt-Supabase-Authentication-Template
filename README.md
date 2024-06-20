@@ -1,75 +1,59 @@
-# Nuxt 3 Minimal Starter
+![Directus Mailer](/docs/header.jpg)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Nuxt 3 Supabase Template 🧱
 
-## Setup
+A Nuxt 3 Supabase Starter Template! This template is designed to help you quickly get started with a Nuxt 3 project integrated with Supabase for backend services. It includes essential configurations and examples to streamline your development process.
 
-Make sure to install the dependencies:
+## Installation
 
-```bash
-# npm
-npm install
+- Download or fork the repository
+- Install the requirements\
+  `npm install`
+- Build the extension\
+  `npm run build`
+- Create a folder in your directus endpoints folder named `Mailer` or an alternate route name.
+- Move the `index.js` build file to your new folder `directus/extensions/endpoints/Mailer/index.js`
+- Configure your email client in your .env file [@email config](https://docs.directus.io/configuration/config-options/#email).
+- Start your Directus instance `npx directus start`
 
-# pnpm
-pnpm install
+## Project Structure
 
-# yarn
-yarn install
+-   `pages/`: Directory for Nuxt pages and routes.
+-   `components/`: Reusable Vue components.
+-   `layouts/`: Application layouts.
+-   `store/`: Pinia store modules for state management.
+-   `plugins/`: Nuxt plugins.
+-   `composables/`: Vue 3 composables.
+-   `assets/`: Static assets like images and styles.
+-   `public/`: Static files served at the root.
+-   `nuxt.config.ts`: Nuxt configuration file.
 
-# bun
-bun install
+## 
+![Directus Mailer](/docs/nuxtuibanner.jpg)
+### Nuxt UI Components
+This project uses the Nuxt UI component library.
+
+## Environment Variables
+
+```
+SUPABASE_URL=""
+SUPABASE_KEY=""
 ```
 
-## Development Server
+## Usage
 
-Start the development server on `http://localhost:3000`:
+### Supabase Integration
 
-```bash
-# npm
-npm run dev
+This template includes a basic Supabase setup. You can find the Supabase client initialization in the `plugins/supabase.js` file.
 
-# pnpm
-pnpm run dev
+### Authentication
 
-# yarn
-yarn dev
+A simple authentication example is provided in the `pages/auth/login.vue` file. Customize it according to your needs.
 
-# bun
-bun run dev
-```
+## Contributing
 
-## Production
+Contributions are welcome! Please open an issue or submit a pull request.
 
-Build the application for production:
+## License
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is licensed under the MIT License.
