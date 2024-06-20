@@ -93,8 +93,8 @@ export default {
       providers: {},
       loginMethod: "",
       form: {
-        email: "",
-        password: "",
+        email: "ryntab@github.com",
+        password: "password",
       },
       providers: [
         {
