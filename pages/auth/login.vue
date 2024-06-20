@@ -20,7 +20,7 @@
               >
               <UInput
                 v-model="form.email"
-                color="emerald"
+                color="white"
                 placeholder="Password"
                 type="email"
                 autocapitalize="none"
@@ -36,7 +36,7 @@
               >
               <UInput
                 v-model="form.password"
-                color="emerald"
+                color="white"
                 placeholder="Confirm Password"
                 type="password"
                 autocapitalize="none"
