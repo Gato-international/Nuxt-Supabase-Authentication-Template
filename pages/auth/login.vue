@@ -16,12 +16,28 @@
               <label
                 class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 for="email"
-                >Password</label
+                >E-mail</label
               >
               <UInput
                 v-model="form.email"
                 color="white"
-                placeholder="Password"
+                placeholder="E-mail"
+                type="email"
+                autocapitalize="none"
+                autocomplete="email"
+                autocorrect="off"
+              />
+            </div>
+            <div>
+              <label
+                class="text-xs font-medium leading-8 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="email"
+                >E-mail</label
+              >
+              <UInput
+                v-model="form.email"
+                color="white"
+                placeholder="E-mail"
                 type="email"
                 autocapitalize="none"
                 autocomplete="email"
